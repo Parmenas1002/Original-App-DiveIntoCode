@@ -11,6 +11,7 @@ This application based on this technologies
 * Devise
 * Commment system
 * Favorites System
+* Rails admin
 
 ## Technologies outside the curriculum
 

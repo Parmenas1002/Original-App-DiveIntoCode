@@ -52,7 +52,7 @@ https://cacoo.com/diagrams/uCPt9MfzFasvSgb2/CFCC6
 
 ## Screen Transition Diagram
 
-![TRANSITION SCREEN DIAGRAM](public/transitionScreen.png)
+![TRANSITION SCREEN DIAGRAM](public/transScreen.png.png)
 
 https://cacoo.com/diagrams/PpZPXCkj54ml3xUU/F9C07
 

@@ -15,9 +15,9 @@ This application based on this technologies
 
 ## Technologies outside the curriculum
 
-* Cloudinary
-* Fedapay Api
-* Video Upload
+* Cloudinary (will be used to upload file in cloud)
+* Fedapay Api (will be used to manage payement for movies)
+* Video Upload 
 
 ## Execution procedure 
 

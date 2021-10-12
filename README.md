@@ -46,7 +46,7 @@ https://docs.google.com/spreadsheets/d/1LTUUULX_LPOt3UqAhZG5Bv6c0iz2MjcFmFeE52B5
 
 ## ER Diagram
 
-![ERDIAGRAM](public/ERDiagram.png)
+![ERDIAGRAM](public/ERDiagramm.png)
 
 https://cacoo.com/diagrams/uCPt9MfzFasvSgb2/CFCC6
 

@@ -26,7 +26,7 @@
     <div class="row justify-content-center align-content-center mt-4">
         <% if @movies.count > 0%>
             <% @movies.each do |movie| %>
-                <div class="col-lg-3 col-md-6 mb-md-5 mb-lg-0 d-flex align-items-stretch mb-4">
+                <div class="col-lg-3 col-md-6 mb-md-5 mb-lg-4 d-flex align-items-stretch">
                     <div class="card shadow border-none" style="width: 100%;">
                         <%= image_tag(movie.image_url) %> 
                         <div class="card-body">

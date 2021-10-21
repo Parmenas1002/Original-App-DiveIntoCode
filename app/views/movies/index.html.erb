@@ -1,0 +1,67 @@
+<div class="container-fluid movieTop pt-5 pb-3">
+    <div class="row justify-content-center align-content-center">
+        <div class="col-md-4 text-center text-white">
+            <h3>The most beautiful colors of Africa</h3>
+            <p class="mt-4 mb-4">We take our African origins to the top to reveal it to the world !</p>                        
+        </div>
+    </div>
+</div>
+<%= render "layouts/flash" %>
+
+<div class="container-fluid pt-5 pb-2" id='intro'>
+    <div class="row justify-content-center align-content-center text-center">
+        <div class="col-md-5">
+            <h1>What about Origins</h1>
+            <p class="mt-3 mb-4">My Task is the best application that helps you quickly plan your different tasks. Its use is very simple and you register your stains after a few seconds. Sorting functions are also available to give you a clearer idea of ​​your spots. With our solution you are sure to organize yourself better.</p>                        
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid pt-3 pb-5" id='moviesList'>
+    <div class="row justify-content-center align-content-center text-center">
+        <div class="col-md-5">
+            <h1 id="title">Some Movies</h1>
+            <p class="mt-3 mb-4">Now watch your best African films from home.</p>                        
+        </div>
+    </div>
+    <div class="row justify-content-center align-content-center mt-4">
+        <% if @movies.count > 0%>
+            <% @movies.each do |movie| %>
+                <div class="col-lg-3 col-md-6 mb-md-5 mb-lg-0 d-flex align-items-stretch">
+                    <div class="card shadow border-none" style="width: 100%;">
+                        <%= image_tag(movie.image_url) %> 
+                        <div class="card-body">
+                            <h5 class="card-title text-center font-weight-bold"><%= movie.name %></h5>
+                            <p class="card-text"><%= movie.description %></p>
+                            <p class="is_paying">
+                                <% if movie.is_paying %>
+                                    Paying: 600FCFA/Subscription: Standard
+                                <% else %>
+                                    Free-You can see this without pay
+                                <%end%>
+                            </p>
+                            <p class="text-justify">Producted by : <%= movie.director %></p>
+                            <p class="text-center mt-4"><%= link_to 'Watch yet' , movie_path(movie.id), class: "watch-button" %></p>                    
+                        </div>
+                    </div>        
+                </div>
+            <%end%>
+        <% else %>
+            <p> Nothing to show yet </p>
+        <%end%>
+    </div>
+</div>
+
+<div class="container-fluid" >
+    <div class="row justify-content-center align-content-center text-center pt-5 pb-3" id='subscribe'>
+        <div class="col-md-5">
+            <h3>Don't miss any of your best movies today</h3>
+            <p class="mt-4 mb-4">Opt for a subscription offer and stay connected to Africa !</p> 
+            <p class="text-center mt-4"><a href="#" class="subscribe-button">Get Subscriptions</a></p>
+        </div>
+    </div>
+</div>
+<%= render "layouts/footer" %>
+
+
+

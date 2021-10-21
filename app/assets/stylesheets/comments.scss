@@ -1,0 +1,12 @@
+.submit-comment{
+    background-color: rgba(48, 226, 78, 0.91);
+    padding: 6px 35px 6px 35px;
+    font-weight: bold;
+    transition: all 0.5s;
+    color: white;
+    border: 1px solid rgba(48, 226, 78, 0.91);
+}
+
+.submit-comment:hover{
+   opacity: 0.8;
+}

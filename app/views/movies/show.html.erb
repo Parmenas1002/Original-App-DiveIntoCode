@@ -1,0 +1,38 @@
+<div class="container-fluid">
+    <div class="row justify-content-center align-content-center">
+        <div class="col-md-12 pl-0 pr-0 text-center">
+            <div class="intro">
+				<div class="popout-video">
+					<%= video_tag (@movie.video_url), class: "intro-video", playsinline: true, controls:true, preload:"auto", type:"video/mp4", autoplay: false, height: 450 %>
+					<div class="popout-video__controls">
+						<div class="close-video"></div>
+					</div>
+				</div>
+			</div>                      
+        </div>
+    </div>
+</div>
+<%= render "layouts/flash" %>
+
+<div class="container-fluid">
+    <div class="row justify-content-center align-content-center">
+        <div class="col-md-8 text-center pt-3">
+            <h3 class="font-weight-bold mb-3"><%= @movie.name %></h3>  
+			<% unless @movie.user_id == current_user.id %>
+				<% if @favorite.present? %>
+					<%= link_to 'Delete to favorites', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
+				<% else %>
+					<%= link_to 'Add to favorites', favorites_path(movie_id: @movie.id), method: :post, class: 'btn btn-primary' %>
+				<% end %>
+			<% end %>             
+        </div>
+    </div>
+</div>
+
+<div id="comments_area"> 
+	<%= render partial: 'comments/index', locals: { comments: @comments, movie: @movie } %>
+</div>
+
+<%= render partial: 'comments/form', locals: { comment: @comment, movie: @movie } %>
+
+

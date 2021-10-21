@@ -1,0 +1,8 @@
+<% flash.each do |key, value| %>
+    <%= content_tag(:div, class: "alert alert-#{key} alert-dismissible fade show pt-4 pb-2", role: "alert") do %>
+    <p class="text-center font-weight-bold"><%= value %> </p>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <% end %>  
+<% end %>

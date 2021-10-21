@@ -1,0 +1,41 @@
+<div class="container-fluid mt-5">
+    <div class="row justify-content-center align-content-center">
+        <div class="col-md-4 text-center">
+            <h2 id="title" class="font-weight-bold">Profile</h2>                                   
+        </div>
+    </div>
+    <div class="row justify-content-center align-content-center">
+        <div class="col-md-4 text-center pt-3">
+            <p> <%= current_user.name %> </p>     
+            <p> <%= current_user.email %> </p>  
+            <p class="text-center mt-4"><%= link_to 'Update Profile', edit_user_registration_path, class: 'update-button' %>                           
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid pt-3 mt-4 pb-5">
+    <div class="row justify-content-center align-content-center text-center">
+        <div class="col-md-5">
+            <h1 id="title">Favorites Movies</h1>                     
+        </div>
+    </div>
+    <div class="row justify-content-center align-content-center mt-4">
+        <% if @user.favorite_movies.count > 0%>
+            <% @user.favorite_movies.each do |movie| %>
+                <div class="col-lg-3 col-md-6 mb-md-5 mb-lg-0 d-flex align-items-stretch">
+                    <div class="card shadow border-none" style="width: 100%;">
+                        <%= image_tag(movie.image_url) %> 
+                        <div class="card-body">
+                            <h5 class="card-title text-center font-weight-bold"><%= movie.name %></h5>
+                            <p class="card-text"><%= movie.description %></p>
+                            <p class="text-justify">Producted by : <%= movie.director %></p>
+                            <p class="text-center mt-4"><%= link_to 'Watch again' , movie_path(movie.id), class: "watch-button" %></p>                    
+                        </div>
+                    </div>        
+                </div>
+            <%end%>
+        <% else %>
+            <p> You don't yave favorites movies yet.</p>
+        <%end%>
+    </div>
+</div>

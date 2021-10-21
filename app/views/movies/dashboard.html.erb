@@ -1,0 +1,73 @@
+<div class="container-fluid movieTop pt-5 pb-3">
+    <div class="row justify-content-center align-content-center">
+        <div class="col-md-4 text-center text-white">
+            <h3>ALL THE BEST AFRICAN MOVIES IS HERE</h3>
+            <p class="mt-4 mb-4">We take our African origins to the top to reveal it to the world !</p> 
+            <%= form_with(scope: :movie,local: true, url: dashboard_path(search: "true"), method: :get) do |f| %>
+                 <div class="col-md-12 d-flex">
+                    <%= f.text_field :name, class:"form-control", placeholder: "Search now ....", id: "serach-field" %>
+                 </div> 
+            <%end%>                       
+        </div>
+    </div>
+</div>
+<%= render "layouts/flash" %>
+
+<div class="container-fluid pt-4 pb-5">
+    <div class="row justify-content-center align-content-center text-center">
+        <div class="col-md-5">
+            <h1 id="title">Your best Movies</h1>
+            <p class="mt-3 mb-2">Now watch your best African films from home.</p>                        
+        </div>
+    </div>
+    <div class="row justify-content-center align-content-center text-center">
+        
+    </div>
+    <div class="row justify-content-center align-content-center mt-4">
+        <% if @movies.count > 0%>
+            <% @movies.each do |movie| %>
+                <div class="col-lg-3 col-md-6 mb-md-5 mb-lg-0 d-flex align-items-stretch">
+                    <div class="card shadow border-none" style="width: 100%;">
+                        <%= image_tag(movie.image_url) %> 
+                        <div class="card-body">
+                            <h5 class="card-title text-center font-weight-bold"><%= movie.name %></h5>
+                            <p class="card-text"><%= movie.description %></p>
+                            <p class="is_paying">
+                                <% if movie.is_paying %>
+                                    Paying: 600FCFA/Subscription: Standard
+                                <% else %>
+                                    Free-You can see this without pay
+                                <%end%>
+                            </p>
+                            <p class="text-justify">Producted by : <%= movie.director %></p>
+                            <p class="text-center mt-4"><%= link_to 'Watch yet' , movie_path(movie.id), class: "watch-button" %></p>                    
+                        </div>
+                    </div>        
+                </div>
+            <%end%>
+        <% else %>
+            <div class="col-md-12 text-center">
+                <%= image_tag "search_empty.png" , class: "d-inline-block align-top" %>
+                <p class="font-weight-bold"> Search not found. Please try again </p>
+            </div>    
+        <%end%>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row justify-content-right align-content-center pt-5">
+        <div class="col-md-3 text-center">
+            <%= paginate @movies, class: "text-center" %> 
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid" >
+    <div class="row justify-content-center align-content-center text-center pt-5 pb-3" id='subscribe'>
+        <div class="col-md-5">
+            <h3>Don't miss any of your best movies today</h3>
+            <p class="mt-4 mb-4">Opt for a subscription offer and stay connected to Africa !</p> 
+            <p class="text-center mt-4"><a href="#" class="subscribe-button">Get Subscriptions</a></p>
+        </div>
+    </div>
+</div>
+<%= render "layouts/footer" %>

@@ -1,0 +1,4 @@
+$("#comments_area").html("<%= j(render 'comments/index', { comments: @comment.movie.comments, movie: @comment.movie }) %>");
+$("textarea").val('');
+$("#error").html("<%= j flash[:error] %>");
+$("#notice").html("<%= j flash[:notice] %>");

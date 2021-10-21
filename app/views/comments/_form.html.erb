@@ -1,0 +1,17 @@
+<div class="container-fluid pb-2" id='intro'>
+    <div class="row justify-content-center align-content-center">       
+        <div class="col-md-5">
+            <%= form_with(model: [movie, comment]) do |form| %>
+                <p id="error" class="text-danger"></p>
+                <div class="form-group">
+                    <%= form.text_area :content , class: "form-control shadow-sm", rows: 5%>
+                </div>
+                <div class="actions text-right mt-3">
+                    <%= form.submit "Add new comment", class: "submit-comment" %>
+                </div>
+            <% end %>
+        </div>       
+    </div>
+</div>
+
+

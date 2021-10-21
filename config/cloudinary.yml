@@ -1,0 +1,12 @@
+development:
+  cloud_name: dfnejvl09
+  api_key: "448625284368348"
+  api_secret: "OQ-Masiq7TLF6lQUq4fskP2x3hk"
+production:
+  cloud_name: dfnejvl09
+  api_key: "448625284368348"
+  api_secret: "OQ-Masiq7TLF6lQUq4fskP2x3hk"
+test:
+  cloud_name: dfnejvl09
+  api_key: "448625284368348"
+  api_secret: "OQ-Masiq7TLF6lQUq4fskP2x3hk"

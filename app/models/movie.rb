@@ -10,7 +10,7 @@ class Movie < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :favorite_users, through: :favorites, source: :user
   has_many :comments, dependent: :destroy
-  paginates_per 10
+  paginates_per 12
 
   scope :search_with_key, ->(key){where("name LIKE ? OR description LIKE ?", "%#{key}%", "%#{key}%")}
 end

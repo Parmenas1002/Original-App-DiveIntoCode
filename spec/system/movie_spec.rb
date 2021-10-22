@@ -22,7 +22,6 @@ RSpec.describe 'Movie management function', type: :system do
             it 'All movies is listed on the page' do  
                 login()
                 movie = FactoryBot.create(:movie, name: 'movie', description: "My description" ,user: user, category: category)
-                movie.image.store!(File.open('spec/fixtures/image1.jpg'))
                 visit movies_path
                 expect(page).to have_content 'movie'
                 expect(page).to have_content 'My description'
@@ -32,8 +31,6 @@ RSpec.describe 'Movie management function', type: :system do
             it 'The content of the relevant movie is displayed' do
                 login()
                 movie = FactoryBot.create(:movie, name: 'movie', description: "My description" ,user: user, category: category)
-                movie.image.store!(File.open('spec/fixtures/image1.jpg'))
-                movie.video.store!(File.open('spec/fixtures/video.mp4'))
                 visit movie_path(movie.id)
                 expect(page).to have_content 'movie'
             end
@@ -42,8 +39,6 @@ RSpec.describe 'Movie management function', type: :system do
             it 'Comment is displayed on the page' do
                 login()
                 movie = FactoryBot.create(:movie, name: 'movie', description: "My description" ,user: user, category: category)
-                movie.image.store!(File.open('spec/fixtures/image1.jpg'))
-                movie.video.store!(File.open('spec/fixtures/video.mp4'))
                 visit movie_path(movie.id)
                 fill_in "comment[content]" , with: "My comment"
                 click_on "Add new comment"
@@ -55,8 +50,6 @@ RSpec.describe 'Movie management function', type: :system do
             it 'Update Comment is displayed on the page' do
                 login()
                 @movie = FactoryBot.create(:movie, name: 'movie', description: "My description" ,user: user, category: category)
-                @movie.image.store!(File.open('spec/fixtures/image1.jpg'))
-                @movie.video.store!(File.open('spec/fixtures/video.mp4'))
                 visit movie_path(@movie.id)
                 fill_in "comment[content]" , with: "My comment"
                 click_on "Add new comment"
@@ -71,8 +64,6 @@ RSpec.describe 'Movie management function', type: :system do
             it 'Delete Comment is not displayed on the page' do
                 login()
                 @movie = FactoryBot.create(:movie, name: 'movie', description: "My description" ,user: user, category: category)
-                @movie.image.store!(File.open('spec/fixtures/image1.jpg'))
-                @movie.video.store!(File.open('spec/fixtures/video.mp4'))
                 visit movie_path(@movie.id)
                 fill_in "comment[content]" , with: "My comment"
                 click_on "Add new comment"
@@ -87,8 +78,6 @@ RSpec.describe 'Movie management function', type: :system do
             it 'New favorite Movie is displayed on the profile page in favorites movies session' do
                 second_login()
                 @movie = FactoryBot.create(:movie, name: 'movie', description: "My description" ,user: user, category: category)
-                @movie.image.store!(File.open('spec/fixtures/image1.jpg'))
-                @movie.video.store!(File.open('spec/fixtures/video.mp4'))
                 visit movie_path(@movie.id)
                 click_link "Add to favorites"
                 click_on "Profile" 
@@ -101,8 +90,6 @@ RSpec.describe 'Movie management function', type: :system do
             it 'Favorite Movie is not displayed on the profile page in favorites movies session' do
                 second_login()
                 @movie = FactoryBot.create(:movie, name: 'movie', description: "My description" ,user: user, category: category)
-                @movie.image.store!(File.open('spec/fixtures/image1.jpg'))
-                @movie.video.store!(File.open('spec/fixtures/video.mp4'))
                 visit movie_path(@movie.id)
                 click_on "Add to favorites"
                 click_on "Delete to favorites"

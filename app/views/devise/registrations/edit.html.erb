@@ -2,7 +2,7 @@
 <div class="container-fluid mt-5">
     <div class="row justify-content-center align-content-center">
         <div class="col-md-4 text-center">
-            <h3 id="title" class="font-weight-bold">Edit profile</h3>                        
+            <h3 id="title" class="font-weight-bold"><%=I18n.t('views.messages.editProfile')%></h3>                        
         </div>
     </div>
     <div class="row justify-content-center align-content-center mt-4">
@@ -18,9 +18,9 @@
             </div> 
             
             <div class= "form-group">
-                <%= f.label :password %><i>(leave blank if you don't want to change it)</i><br/>
+                <%= f.label :password %><i>(<%=I18n.t('views.messages.leaveBlank')%>)</i><br/>
                 <% if @minimum_password_length %>
-                <em>(<%= @minimum_password_length %> characters minimum)</em>
+                <em>(<%= @minimum_password_length %> <%=I18n.t('views.messages.minCharacter')%>)</em>
                 <% end %><br />
                 <%= f.password_field :password, autocomplete: "new-password", class: "form-control shadow-sm" %>
             </div> 
@@ -31,12 +31,12 @@
             </div>  
 
             <div class= "form-group">
-                <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+                <%= f.label :current_password %> <i>(<%=I18n.t('views.messages.needPassword')%>)</i><br />
                 <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control shadow-sm" %>
             </div>   
             
             <div class="actions text-center mt-5">
-              <%= f.submit "Update", class: "submit-button" %>
+              <%= f.submit I18n.t('views.buttons.update'), class: "submit-button" %>
             </div>
           <% end %>
         </div>

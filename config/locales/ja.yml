@@ -1,0 +1,253 @@
+---
+ja:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "バリデーションに失敗しました: %{errors}"
+        restrict_dependent_destroy:
+          has_one: "%{record}が存在しているので削除できません"
+          has_many: "%{record}が存在しているので削除できません"
+  date:
+    abbr_day_names:
+    - 日
+    - 月
+    - 火
+    - 水
+    - 木
+    - 金
+    - 土
+    abbr_month_names:
+    -
+    - 1月
+    - 2月
+    - 3月
+    - 4月
+    - 5月
+    - 6月
+    - 7月
+    - 8月
+    - 9月
+    - 10月
+    - 11月
+    - 12月
+    day_names:
+    - 日曜日
+    - 月曜日
+    - 火曜日
+    - 水曜日
+    - 木曜日
+    - 金曜日
+    - 土曜日
+    formats:
+      default: "%Y/%m/%d"
+      long: "%Y年%m月%d日(%a)"
+      short: "%m/%d"
+    month_names:
+    -
+    - 1月
+    - 2月
+    - 3月
+    - 4月
+    - 5月
+    - 6月
+    - 7月
+    - 8月
+    - 9月
+    - 10月
+    - 11月
+    - 12月
+    order:
+    - :year
+    - :month
+    - :day
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: 約1時間
+        other: 約%{count}時間
+      about_x_months:
+        one: 約1ヶ月
+        other: 約%{count}ヶ月
+      about_x_years:
+        one: 約1年
+        other: 約%{count}年
+      almost_x_years:
+        one: 1年弱
+        other: "%{count}年弱"
+      half_a_minute: 30秒前後
+      less_than_x_minutes:
+        one: 1分以内
+        other: "%{count}分未満"
+      less_than_x_seconds:
+        one: 1秒以内
+        other: "%{count}秒未満"
+      over_x_years:
+        one: 1年以上
+        other: "%{count}年以上"
+      x_days:
+        one: 1日
+        other: "%{count}日"
+      x_minutes:
+        one: 1分
+        other: "%{count}分"
+      x_months:
+        one: 1ヶ月
+        other: "%{count}ヶ月"
+      x_years:
+        one: 1年
+        other: "%{count}年"
+      x_seconds:
+        one: 1秒
+        other: "%{count}秒"
+    prompts:
+      day: 日
+      hour: 時
+      minute: 分
+      month: 月
+      second: 秒
+      year: 年
+  errors:
+    format: "%{attribute}%{message}"
+    messages:
+      accepted: を受諾してください
+      blank: を入力してください
+      present: は入力しないでください
+      confirmation: と%{attribute}の入力が一致しません
+      empty: を入力してください
+      equal_to: は%{count}にしてください
+      even: は偶数にしてください
+      exclusion: は予約されています
+      greater_than: は%{count}より大きい値にしてください
+      greater_than_or_equal_to: は%{count}以上の値にしてください
+      inclusion: は一覧にありません
+      invalid: は不正な値です
+      less_than: は%{count}より小さい値にしてください
+      less_than_or_equal_to: は%{count}以下の値にしてください
+      model_invalid: "バリデーションに失敗しました: %{errors}"
+      not_a_number: は数値で入力してください
+      not_an_integer: は整数で入力してください
+      odd: は奇数にしてください
+      required: を入力してください
+      taken: はすでに存在します
+      too_long: は%{count}文字以内で入力してください
+      too_short: は%{count}文字以上で入力してください
+      wrong_length: は%{count}文字で入力してください
+      other_than: は%{count}以外の値にしてください
+    template:
+      body: 次の項目を確認してください
+      header:
+        one: "%{model}にエラーが発生しました"
+        other: "%{model}に%{count}個のエラーが発生しました"
+  helpers:
+    select:
+      prompt: 選択してください
+    submit:
+      create: 登録する
+      submit: 保存する
+      update: 更新する
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%n%u"
+        precision: 0
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: 円
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: 十億
+          million: 百万
+          quadrillion: 千兆
+          thousand: 千
+          trillion: 兆
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n%u"
+        units:
+          byte: バイト
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: 、
+      two_words_connector: 、
+      words_connector: 、
+  time:
+    am: 午前
+    formats:
+      default: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
+      long: "%Y/%m/%d %H:%M"
+      short: "%m/%d %H:%M"
+    pm: 午後
+  views:
+    messages:
+      profile: プロフィール
+      home: 家
+      signIn: ログイン
+      signUp: サインアップ
+      admin: 管理者
+      guestUser: ゲスト一般ユーザー
+      guestAdmin: ゲスト管理者
+      logout: ログアウト
+      titleIndex: アフリカの最も美しい色
+      whatAbout: Originsはどうですか
+      role: Originsは、アフリカ映画のオンライン配信アプリケーションです。その主な目標は、アフリカ映画を完全な秋に復活させ、市民の目にはすでにそれを提唱することですが、何よりも私たちの国境を越えてそれを明らかにすることです。それは私たちアフリカ人が放送される様々な作品を通して私たちが西洋の現実の利益のためにあまり無視してきた私たちの情報源に戻ることを可能にするでしょう。 Originsは、アフリカの映画製作者が全世界の人々に自国の現実を生き生きとさせるための最高のデジタルパネルを構成します。
+      titleDash: すべての最高のアフリカ映画はここにあります
+      someMovie: いくつかの映画
+      incitation: 今、家からあなたの最高のアフリカ映画を見てください。
+      slogan: 私たちはアフリカの起源をトップに据え、それを世界に公開します！
+      subcribeTitle: 今日のあなたの最高の映画のいずれかをお見逃しなく
+      subscribeText: サブスクリプションオファーを選択して、アフリカとの接続を維持してください！
+      free: 無料-これは無料で見ることができます
+      paying: "支払い：600FCFA /サブスクリプション：標準"
+      productedBy: によって生産
+      searchNotFound: 検索が見つかりません。もう一度やり直してください
+      minCharacter: 最小文字数
+      editProfile: プロファイル編集
+      noAccount: アカウントをお持ちではありません
+      yesAccount: アカウントをお持ちですか
+      leaveBlank: 変更したくない場合は空白のままにします
+      needPassword: 変更を確認するには、現在のパスワードが必要です
+      yourBM: あなたの最高の映画
+      noVideo: ビデオはまだ追加されていません
+      delFavorite: お気に入りに削除
+      addFavorite: お気に入りに追加
+      sure: このアクションを実行してもよろしいですか？
+      updateProfile: プロファイルの更新
+      favoritesMovies: お気に入りの映画
+      noFavorites: あなたはまだお気に入りの映画を好きではありません。
+    buttons:
+      watchYet: まだ見る
+      watchAgain: もう一度見る
+      subscribe: サブスクリプションを取得する
+      update: アップデート
+      edit: '編集'
+      delete: '削除'
+      addComment: 新しいコメントを追加
+      updateComment: コメントを更新
+    form:
+      search: 検索中

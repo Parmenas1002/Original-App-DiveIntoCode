@@ -1,11 +1,11 @@
 <div class="container-fluid movieTop pt-5 pb-3">
     <div class="row justify-content-center align-content-center">
         <div class="col-md-4 text-center text-white">
-            <h3>ALL THE BEST AFRICAN MOVIES IS HERE</h3>
-            <p class="mt-4 mb-4">We take our African origins to the top to reveal it to the world !</p> 
+            <h3><%=I18n.t('views.messages.titleDash')%></h3>
+            <p class="mt-4 mb-4"><%=I18n.t('views.messages.slogan')%></p> 
             <%= form_with(scope: :movie,local: true, url: dashboard_path(search: "true"), method: :get) do |f| %>
                  <div class="col-md-12 d-flex">
-                    <%= f.text_field :name, class:"form-control", placeholder: "Search now ....", id: "serach-field" %>
+                    <%= f.text_field :name, class:"form-control", placeholder: I18n.t('views.form.search'), id: "serach-field" %>
                  </div> 
             <%end%>                       
         </div>
@@ -16,8 +16,8 @@
 <div class="container-fluid pt-4 pb-5">
     <div class="row justify-content-center align-content-center text-center">
         <div class="col-md-5">
-            <h1 id="title">Your best Movies</h1>
-            <p class="mt-3 mb-2">Now watch your best African films from home.</p>                        
+            <h1 id="title"><%=I18n.t('views.messages.yourBM')%></h1>
+            <p class="mt-3 mb-2"><%=I18n.t('views.messages.incitation')%></p>                        
         </div>
     </div>
     <div class="row justify-content-center align-content-center text-center">
@@ -38,13 +38,13 @@
                             <p class="card-text"><%= movie.description %></p>
                             <p class="is_paying">
                                 <% if movie.is_paying %>
-                                    Paying: 600FCFA/Subscription: Standard
+                                    <%=I18n.t('views.messages.paying')%>
                                 <% else %>
-                                    Free-You can see this without pay
+                                    <%=I18n.t('views.messages.free')%>                                    
                                 <%end%>
                             </p>
-                            <p class="text-justify">Producted by : <%= movie.director %></p>
-                            <p class="text-center mt-4"><%= link_to 'Watch yet' , movie_path(movie.id), class: "watch-button" %></p>                    
+                            <p class="text-justify"><%=I18n.t('views.messages.productedBy')%>: <%= movie.director %></p>
+                            <p class="text-center mt-4"><%= link_to I18n.t('views.buttons.watchYet') , movie_path(movie.id), class: "watch-button" %></p>                    
                         </div>
                     </div>        
                 </div>
@@ -52,7 +52,7 @@
         <% else %>
             <div class="col-md-12 text-center">
                 <%= image_tag "search_empty.png" , class: "d-inline-block align-top" %>
-                <p class="font-weight-bold"> Search not found. Please try again </p>
+                <p class="font-weight-bold"> <%=I18n.t('views.messages.searchNotFound')%> </p>
             </div>    
         <%end%>
     </div>
@@ -68,9 +68,9 @@
 <div class="container-fluid" >
     <div class="row justify-content-center align-content-center text-center pt-5 pb-3" id='subscribe'>
         <div class="col-md-5">
-            <h3>Don't miss any of your best movies today</h3>
-            <p class="mt-4 mb-4">Opt for a subscription offer and stay connected to Africa !</p> 
-            <p class="text-center mt-4"><a href="#" class="subscribe-button">Get Subscriptions</a></p>
+            <h3><%=I18n.t('views.messages.subcribeTitle')%></h3>
+            <p class="mt-4 mb-4"><%=I18n.t('views.messages.subscribeText')%></p> 
+            <p class="text-center mt-4"><a href="#" class="subscribe-button"><%=I18n.t('views.buttons.subscribe')%></a></p>
         </div>
     </div>
 </div>

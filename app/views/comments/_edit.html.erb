@@ -7,7 +7,7 @@
                     <%= form.text_area :content , class: "form-control shadow-sm", rows: 5, id: "comment_content_#{movie.id}"%>
                 </div>
                 <div class="actions text-right mt-3">
-                    <%= form.submit "Update comment", class: "submit-comment" %>
+                    <%= form.submit I18n.t('views.buttons.updateComment'), class: "submit-comment" %>
                 </div>
             <% end %>
         </div>     

@@ -2,7 +2,7 @@
 <div class="container-fluid mt-5">
     <div class="row justify-content-center align-content-center">
         <div class="col-md-4 text-center">
-            <h3 id="title" class="font-weight-bold">Sign In</h3>                        
+            <h3 id="title" class="font-weight-bold"><%=I18n.t('views.messages.signIn')%></h3>                        
         </div>
     </div>
     <div class="row justify-content-center align-content-center mt-4">
@@ -24,7 +24,7 @@
             <% end %>
 
             <div class="actions text-center mt-3">
-              <%= f.submit "Sign In", class: "submit-button" %>
+              <%= f.submit I18n.t('views.messages.signIn'), class: "submit-button" %>
             </div>
           <% end %>
           <div class="links text-center mt-3">

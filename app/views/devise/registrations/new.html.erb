@@ -2,7 +2,7 @@
 <div class="container-fluid mt-5">
     <div class="row justify-content-center align-content-center">
         <div class="col-md-4 text-center">
-            <h3 id="title" class="font-weight-bold">Sign Up</h3>                        
+            <h3 id="title" class="font-weight-bold"><%=I18n.t('views.messages.signUp')%></h3>                        
         </div>
     </div>
     <div class="row justify-content-center align-content-center mt-4">
@@ -19,7 +19,7 @@
             <div class= "form-group">
                 <%= f.label :password %><br/>
                 <% if @minimum_password_length %>
-                <em>(<%= @minimum_password_length %> characters minimum)</em>
+                <em>(<%= @minimum_password_length %> <%=I18n.t('views.messages.minCharacter')%>)</em>
                 <% end %><br />
                 <%= f.password_field :password, autocomplete: "new-password", class: "form-control shadow-sm" %>
             </div> 
@@ -30,13 +30,12 @@
             </div>   
             
             <div class="actions text-center mt-5">
-              <%= f.submit "Sign Up", class: "submit-button" %>
+              <%= f.submit I18n.t('views.messages.signUp'), class: "submit-button" %>
             </div>
           <% end %>
           <div class="links text-center ">
             <%= render "devise/shared/links" %>
-          </div>
-          
+          </div>         
         </div>
     </div>
 </div>

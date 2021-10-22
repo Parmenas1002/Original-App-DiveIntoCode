@@ -15,7 +15,7 @@
     <div class="row justify-content-center align-content-center mt-5">
         <div class="col-md-12 pl-0 pr-0 text-center">
             <%= image_tag "no-images.jpg", height:230 %>     
-			<p class="font-weight-bold pt-3">No video added yet</p>            
+			<p class="font-weight-bold pt-3"><%=I18n.t('views.messages.noVideo')%></p>            
         </div>
     </div>
 </div>
@@ -29,9 +29,9 @@
             <h3 class="font-weight-bold mb-3"><%= @movie.name %></h3>  
 			<% unless @movie.user_id == current_user.id %>
 				<% if @favorite.present? %>
-					<%= link_to 'Delete to favorites', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
+					<%= link_to I18n.t('views.messages.delFavorite'), favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
 				<% else %>
-					<%= link_to 'Add to favorites', favorites_path(movie_id: @movie.id), method: :post, class: 'btn btn-primary' %>
+					<%= link_to I18n.t('views.messages.addFavorite'), favorites_path(movie_id: @movie.id), method: :post, class: 'btn btn-primary' %>
 				<% end %>
 			<% end %>             
         </div>

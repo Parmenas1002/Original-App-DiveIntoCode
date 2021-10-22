@@ -19,32 +19,32 @@
           <div class="navbar-collapse collapse pr-md-5" id="navbarsExample05">
             <ul class="navbar-nav pl-md-5 ml-auto pr-5">
               <li class="nav-item pl-md-5">
-                <%= link_to "Home", root_path, class: "nav-link" %>
+                <%= link_to I18n.t('views.messages.home'), root_path, class: "nav-link" %>
               </li>
               <% if user_signed_in? %>
                 <li class="nav-item pl-md-5">
-                  <%= link_to 'Profile', user_path(current_user.id), class: 'nav-link' %>
+                  <%= link_to  I18n.t('views.messages.profile') , user_path(current_user.id), class: 'nav-link' %>
                 </li>
                 <% if current_user.is_admin %>
                   <li class="nav-item pl-md-5">
-                    <a class="nav-link" href="/admin">Admin</a>
+                    <a class="nav-link" href="/admin"><%=I18n.t('views.messages.admin')%></a>
                   </li>
                 <%end%>
                 <li class="nav-item pl-md-5">
-                  <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "nav-link" %>
+                  <%= link_to I18n.t('views.messages.logout'), destroy_user_session_path, method: :delete, class: "nav-link" %>
                 </li>
               <% else %>
                 <li class="nav-item pl-md-5">                 
-                  <%= link_to 'Sign In', new_user_session_path, class:"nav-link" %>
+                  <%= link_to I18n.t('views.messages.signIn') , new_user_session_path, class:"nav-link" %>
                 </li>
                 <li class="nav-item pl-md-5">
-                  <%= link_to "Sign Up", new_user_registration_path, class:"nav-link"%>
+                  <%= link_to I18n.t('views.messages.signUp'), new_user_registration_path, class:"nav-link"%>
                 </li>
                 <li class="nav-item pl-md-5">
-                  <%= link_to "Guest General User", users_guest_sign_in_path, method: :post, class:"nav-link"%>
+                  <%= link_to I18n.t('views.messages.guestUser'), users_guest_sign_in_path, method: :post, class:"nav-link"%>
                 </li>
                 <li class="nav-item pl-md-5">
-                  <%= link_to "Guest Admin", users_guest_admin_sign_in_path, method: :post, class:"nav-link"%>
+                  <%= link_to I18n.t('views.messages.guestAdmin'), users_guest_admin_sign_in_path, method: :post, class:"nav-link"%>
                 </li>
               <%end%>             
             </ul> 

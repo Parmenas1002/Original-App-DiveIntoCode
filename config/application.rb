@@ -9,6 +9,7 @@ Bundler.require(*Rails.groups)
 module OriginsApp
   class Application < Rails::Application
     config.load_defaults 5.2
+    config.i18n.default_locale = :en
     config.generators do |g|
       g.test_framework :rspec,
                        model_specs: true,

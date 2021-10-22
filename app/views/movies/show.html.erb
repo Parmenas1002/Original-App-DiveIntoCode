@@ -1,17 +1,26 @@
+<% if @movie.video && @movie.video.url%>
 <div class="container-fluid">
     <div class="row justify-content-center align-content-center">
         <div class="col-md-12 pl-0 pr-0 text-center">
             <div class="intro">
-				<div class="popout-video">
-					<%= video_tag (@movie.video_url), class: "intro-video", playsinline: true, controls:true, preload:"auto", type:"video/mp4", autoplay: false, height: 450 %>
-					<div class="popout-video__controls">
-						<div class="close-video"></div>
-					</div>
+				<div class="popout-video">					
+                    <%= video_tag (@movie.video_url), class: "intro-video", playsinline: true, controls:true, preload:"auto", type:"video/mp4", autoplay: false, height: 450 %>					
 				</div>
 			</div>                      
         </div>
     </div>
 </div>
+<% else %>
+	<div class="container-fluid">
+    <div class="row justify-content-center align-content-center mt-5">
+        <div class="col-md-12 pl-0 pr-0 text-center">
+            <%= image_tag "no-images.jpg", height:230 %>     
+			<p class="font-weight-bold pt-3">No video added yet</p>            
+        </div>
+    </div>
+</div>
+        
+<% end %>
 <%= render "layouts/flash" %>
 
 <div class="container-fluid">

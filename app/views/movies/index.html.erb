@@ -29,7 +29,11 @@
             <% @movies.each do |movie| %>
                 <div class="col-lg-3 col-md-6 mb-md-5 mb-lg-0 d-flex align-items-stretch mb-4">
                     <div class="card shadow border-none" style="width: 100%;">
-                        <%= image_tag(movie.image_url) %> 
+                        <% if movie.image && movie.image.url%>
+                            <%= image_tag (movie.image_url), height: 230 %> 
+                        <% else %>
+                            <%= image_tag "no-images.jpg", height:230 %>
+                        <% end %>
                         <div class="card-body">
                             <h5 class="card-title text-center font-weight-bold"><%= movie.name %></h5>
                             <p class="card-text"><%= movie.description %></p>

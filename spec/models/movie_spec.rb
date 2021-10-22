@@ -18,9 +18,9 @@ RSpec.describe Movie, type: :model do
             end
         end
 
-        context 'Create Movie without description' do
+        context 'Create Movie all informations' do
             it 'Validation passes' do
-                movie = Movie.new(name: "Title", description: "My description", user: user, category:category)
+                movie = FactoryBot.create(:movie, name: 'movie', description: "My description" ,user: user, category: category)
                 expect(movie).to be_valid
             end
         end

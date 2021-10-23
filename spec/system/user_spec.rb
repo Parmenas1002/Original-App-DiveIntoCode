@@ -27,5 +27,13 @@ RSpec.describe 'User profile management function', type: :system do
             expect(page).to have_content "newemail@gmail.com"  
         end
     end
+    context 'When the general user tries to access to admin page and ' do
+        it "You jump on error 500 pages " do
+            login()    
+            visit rails_admin_path
+            expect(page).to have_content "We're sorry, but something went wrong. ERROR 500"
+              
+        end
+    end
   end
 end

@@ -8,10 +8,9 @@ RSpec.feature 'User signs out' do
 
     visit root_path
 
-    click_link 'Logout'
+    click_link I18n.t('views.messages.logout')
 
-    expect(page).to have_text 'Signed out successfully.'
-    expect(page).to have_no_link 'Logout'
+    expect(page).to have_no_link I18n.t('views.messages.logout')
     expect(page).to have_current_path root_path
   end
 end

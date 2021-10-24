@@ -1,15 +1,15 @@
 require 'rails_helper'
 def login 
     visit new_user_session_path
-    fill_in 'Email', with: "from@example.com"
-    fill_in 'Password', with: "password"
-    click_button 'Sign In'
+    fill_in 'user[email]', with: "from@example.com"
+    fill_in 'user[password]', with: "password"
+    click_button I18n.t('views.messages.signIn')
 end
 def second_login 
     visit new_user_session_path
-    fill_in 'Email', with: "admin@example.com"
-    fill_in 'Password', with: "password"
-    click_button 'Sign In'
+    fill_in 'user[email]', with: "admin@example.com"
+    fill_in 'user[password]', with: "password"
+    click_button I18n.t('views.messages.signIn')
 end
 RSpec.describe 'Movie management function', type: :system do
     include CarrierWave::Test::Matchers
@@ -41,7 +41,7 @@ RSpec.describe 'Movie management function', type: :system do
                 movie = FactoryBot.create(:movie, name: 'movie', description: "My description" ,user: user, category: category)
                 visit movie_path(movie.id)
                 fill_in "comment[content]" , with: "My comment"
-                click_on "Add new comment"
+                click_on I18n.t('views.buttons.addComment')
                 expect(page).to have_content 'My comment'
             end
         end
@@ -52,10 +52,10 @@ RSpec.describe 'Movie management function', type: :system do
                 @movie = FactoryBot.create(:movie, name: 'movie', description: "My description" ,user: user, category: category)
                 visit movie_path(@movie.id)
                 fill_in "comment[content]" , with: "My comment"
-                click_on "Add new comment"
-                click_on "Edit"
+                click_on I18n.t('views.buttons.addComment')
+                click_on I18n.t('views.buttons.edit')
                 fill_in "comment_content_"+ @movie.id.to_s , with: "Comment update"
-                click_on "Update comment"
+                click_on I18n.t('views.buttons.updateComment')
                 expect(page).to have_content 'Comment update'
             end
         end
@@ -66,7 +66,7 @@ RSpec.describe 'Movie management function', type: :system do
                 @movie = FactoryBot.create(:movie, name: 'movie', description: "My description" ,user: user, category: category)
                 visit movie_path(@movie.id)
                 fill_in "comment[content]" , with: "My comment"
-                click_on "Add new comment"
+                click_on I18n.t('views.buttons.addComment')
                 delete_buttons = all('.delete')  
                 page.accept_confirm do
                     delete_buttons[0].click
@@ -79,8 +79,8 @@ RSpec.describe 'Movie management function', type: :system do
                 second_login()
                 @movie = FactoryBot.create(:movie, name: 'movie', description: "My description" ,user: user, category: category)
                 visit movie_path(@movie.id)
-                click_link "Add to favorites"
-                click_on "Profile" 
+                click_link I18n.t('views.messages.addFavorite')
+                click_on I18n.t('views.messages.profile') 
                 expect(page).to have_content 'movie'
                 expect(page).to have_content 'My description'
             end
@@ -91,10 +91,10 @@ RSpec.describe 'Movie management function', type: :system do
                 second_login()
                 @movie = FactoryBot.create(:movie, name: 'movie', description: "My description" ,user: user, category: category)
                 visit movie_path(@movie.id)
-                click_on "Add to favorites"
-                click_on "Delete to favorites"
-                click_on "Profile" 
-                expect(page).to have_content "You don't yave favorites movies yet."
+                click_on I18n.t('views.messages.addFavorite')
+                click_on I18n.t('views.messages.delFavorite')
+                click_on I18n.t('views.messages.profile') 
+                expect(page).to have_content I18n.t('views.messages.noFavorites')
             end
         end
 
